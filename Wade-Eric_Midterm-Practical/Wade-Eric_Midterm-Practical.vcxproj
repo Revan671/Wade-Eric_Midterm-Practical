@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="gitignore.cpp" />
     <ClCompile Include="Question.cpp" />
     <ClCompile Include="QuestionGenerator.cpp" />
     <ClCompile Include="Wade-Eric_Midterm-Practical.cpp" />
@@ -146,6 +147,9 @@
   <ItemGroup>
     <ClInclude Include="Question.h" />
     <ClInclude Include="QuestionGenerator.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="gitignore.gitignore" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
