@@ -3,7 +3,7 @@ class Question
 {
 public:
 	Question();
-	Question(char* prompt, char* ans1, char* ans2, char* ans3);
+	Question(char* prompt, char* ans1, char* ans2, char* ans3, int correctAns);
 	~Question();
 	char* GetPrompt();
 	void SetPrompt(char* prompt);
@@ -15,5 +15,6 @@ private:
 	char* mAns1;
 	char* mAns2;
 	char* mAns3;
+	int mCorrectAns;
 };
 

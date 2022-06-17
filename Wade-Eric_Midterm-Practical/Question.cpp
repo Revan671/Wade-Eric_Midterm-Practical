@@ -2,11 +2,12 @@
 
 Question::Question() {}
 
-Question::Question(char* prompt, char* ans1, char* ans2, char* ans3) {
+Question::Question(char* prompt, char* ans1, char* ans2, char* ans3, int correctAns) {
 	mPrompt = prompt;
 	mAns1 = ans1;
 	mAns2 = ans2;
 	mAns3 = ans3;
+	mCorrectAns = correctAns;
 }
 
 Question::~Question() {}
