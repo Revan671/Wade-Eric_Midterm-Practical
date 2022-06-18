@@ -1,7 +1,5 @@
 #include "Question.h"
 
-Question::Question() {}
-
 Question::Question(char* prompt, int correctAns) {
 	mPrompt = prompt;
 	mCorrectAns = correctAns;

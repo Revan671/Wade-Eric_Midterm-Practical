@@ -2,7 +2,6 @@
 class Question
 {
 public:
-	Question();
 	Question(char* prompt, int correctAns);
 	~Question();
 	char* GetPrompt();
