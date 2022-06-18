@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <vector>
-#include "QuestionGenerator.h"
 #include "Question.h"
 
 void RunGame(int numQuestions);
@@ -18,28 +17,29 @@ int main()
 
     while (!exitPressed) {
         GenerateQuestions();
-        std::cout << "How long of a game do you want to play?\n1) 4 Questions\n2) 6 Questions\n3) 8 Questions\n4) 10 Questions\n5) Exit Application";
-        int input = 6;
+        std::cout << "How long of a game do you want to play?\n1) 4 Questions\n2) 6 Questions\n3) 8 Questions\n4) 10 Questions\n5) Exit Application\n\nAnswer: ";
+        int input;
         std::cin >> input;
+        std::cout << "\n" << input;
         switch (input) {
-        case1:
-            RunGame(4);
-            break;
-        case2:
-            RunGame(6);
-            break;
-        case3:
-            RunGame(8);
-            break;
-        case4:
-            RunGame(10);
-            break;
-        case5:
-            exitPressed = true;
-            break;
-        default:
-            std::cout << "\nInvalid Input\n";
-            break;
+            case 1:
+                RunGame(4);
+                break;
+            case 2:
+                RunGame(6);
+                break;
+            case 3:
+                RunGame(8);
+                break;
+            case 4:
+                RunGame(10);
+                break;
+            case 5:
+                exitPressed = true;
+                break;
+            default:
+                std::cout << "\nInvalid Input\n";
+                break;
         }
 
         if (exitPressed)
@@ -52,7 +52,29 @@ int main()
 }
 
 void RunGame(int numQuestions) {
+    int score = 0;
+    int input;
+    for (int i = 0; i < numQuestions; i++) {
+        srand(time(0));
+        int random = rand() % Questions.size();
+        Question randSelection = Questions[random];
+        Questions.erase(Questions.begin() + random);
 
+        std::cout << "\n" << randSelection.GetPrompt() << "\n";
+        std::cout << "Answer: ";
+        
+        std::cin >> input;
+        if (input == randSelection.GetCorrectAns()) {
+            std::cout << "\nCORRECT\n\n";
+            score++;
+        }
+        else
+            std::cout << "\nINCORRECT\n\n";
+    }
+    std::cout << "GAME OVER\nYour score is: " << score << "\n\n\n Press any button to continue:";
+    std::cin.ignore();
+    std::cin.get();
+    std::cout << "\n\n\n\n";
 }
 
 void GenerateQuestions() {
