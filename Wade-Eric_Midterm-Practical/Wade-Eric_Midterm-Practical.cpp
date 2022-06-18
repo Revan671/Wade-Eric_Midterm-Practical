@@ -71,7 +71,7 @@ void RunGame(int numQuestions) {
         else
             std::cout << "\nINCORRECT\n\n";
     }
-    std::cout << "GAME OVER\nYour score is: " << score << "\n\n\n Press any button to continue:";
+    std::cout << "GAME OVER\nYour score is: " << score <<"/"<<numQuestions << "\n\n\n Press any button to continue:";
     std::cin.ignore();
     std::cin.get();
     std::cout << "\n\n\n\n";
